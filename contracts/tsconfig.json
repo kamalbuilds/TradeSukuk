@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "module": "commonjs",
+    "lib": ["ES2022"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -10,8 +11,14 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "rootDir": "./",
-    "typeRoots": ["./node_modules/@types", "./typechain-types"]
+    "typeRoots": ["./node_modules/@types", "./typechain-types"],
+    "types": ["node", "mocha", "chai"]
   },
-  "include": ["./scripts", "./test", "./typechain-types"],
-  "exclude": ["node_modules"]
+  "include": [
+    "contracts/**/*.ts",
+    "scripts/**/*.ts",
+    "tests/**/*.ts",
+    "hardhat.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "cache", "artifacts"]
 }
